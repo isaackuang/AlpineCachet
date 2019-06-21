@@ -11,7 +11,7 @@ RUN curl https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub -o /etc/apk/ke
     php7-posix@php php7-session@php \
     php7-soap@php php7-xml@php php7-zip@php
 
-COPY Cachet-2.3.18 /var/www/html
+COPY Cachet-2.4 /var/www/html
 
 COPY config /
 

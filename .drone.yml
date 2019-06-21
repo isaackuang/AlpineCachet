@@ -5,12 +5,12 @@ steps:
 - name: get Cachet file
   image: isaackuang/tools
   commands:
-   - wget https://github.com/CachetHQ/Cachet/archive/v2.3.18.tar.gz
-   - tar zxvf v2.3.18.tar.gz
+   - wget https://github.com/CachetHQ/Cachet/archive/2.4.tar.gz
+   - tar zxvf 2.4.tar.gz
 - name: composer install
   image: isaackuang/php-composer
   commands:
-  - cd Cachet-2.3.18
+  - cd Cachet-2.4
   - composer install --no-dev
 - name: build Docker
   image: plugins/docker

@@ -1,0 +1,23 @@
+---
+kind: pipeline
+name: default
+steps:
+- name: get Cachet file
+  image: isaackuang/tools
+  commands:
+   - wget https://github.com/CachetHQ/Cachet/archive/v2.3.18.tar.gz
+   - tar zxvf v2.3.18.tar.gz
+- name: composer install
+  image: isaackuang/php-composer
+  commands:
+  - cd Cachet-2.3.18
+  - composer install --no-dev
+- name: build Docker
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: isaackuang/cachet
+    tags: latest

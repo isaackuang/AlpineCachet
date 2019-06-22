@@ -1,3 +1,4 @@
 #!/bin/sh
 
+mkdir -p /tmp/cache/
 chmod -R 777 /var/www/html/storage/
